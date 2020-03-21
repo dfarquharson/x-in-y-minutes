@@ -54,6 +54,19 @@ main = putStrLn $ show $ foldr (&&) True $ map passed $ map test $ map expectT
     ([0, 2 .. 10] == [0, 2, 4, 6, 8, 10]), -- give a step and it'll keep working
     ([5..1] == []), -- default in incrementing, so this doesn't work
     ([5,4..1] == [5, 4, 3, 2, 1]), -- but if you provide a step, then it works
-    ([1..10] !! 3 == 4) --zero-based indexing as all sane languages should :)
+    ([1..10] !! 3 == 4), --zero-based indexing as all sane languages should :)
+    (take 3 [1..] == [1, 2, 3]), -- infinite lists!
+    ([1..] !! 999 == 1000),
+    ([1..5] ++ [6..10] == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
+    (0:[1..5] == [0, 1, 2, 3, 4, 5]), -- `:` is like cons
+    (head [1..5] == 1),
+    (tail [1..5] == [2, 3, 4, 5]),
+    (init [1..5] == [1, 2, 3, 4]),
+    (last [1..5] == 5),
+    ([x * 2 | x <- [1..5]] == [2, 4, 6, 8, 10]), -- list comprehensions
+    ([x * 2 | x <- [1..5], x * 2 > 4] == [6, 8, 10]), -- list comprehensions with a filter
+    (fst ("haskell", 1) == "haskell"), -- first thing in a tuple
+    (snd ("haskell", 1) == 1), -- second thing in a tuple
+    (True) -- this is the placeholder for the last list item, so I don't have to worry about commas :)
   ]
 
