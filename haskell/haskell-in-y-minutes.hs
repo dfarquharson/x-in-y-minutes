@@ -5,7 +5,6 @@
  -}
 
 -- My own shitty little test framework
-data TestResult = Pass Bool | Fail Bool deriving (Show)
 data Expectation = Expect Bool Bool deriving (Show, Eq)
 data Result = Actual Expectation Bool deriving (Show)
 
