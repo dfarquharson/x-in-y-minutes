@@ -1,4 +1,5 @@
 # Haskell
+[Reference](https://learnxinyminutes.com/docs/haskell/)
 
 ## Run
 `./run.sh`
