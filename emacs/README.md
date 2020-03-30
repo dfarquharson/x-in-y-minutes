@@ -6,4 +6,7 @@
 - [ ] fonts
 - [ ] color schemes
 - [ ] racket mode
+- [ ] magit
+- [ ] org-mode
+- [ ] clojure setup research and experimentation
 
